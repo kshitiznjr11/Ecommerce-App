@@ -1,0 +1,32 @@
+{
+  "name": "ecommerce-app",
+  "version": "1.0.0",
+  "description": "eCommerce application built with MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshitiznjr11/Ecommerce-App.git"
+  },
+  "author": "Kshitiz GC",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/kshitiznjr11/Ecommerce-App/issues"
+  },
+  "homepage": "https://github.com/kshitiznjr11/Ecommerce-App#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.5.0",
+    "nodemon": "^3.1.10"
+  }
+}
