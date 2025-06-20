@@ -71,30 +71,6 @@ const products = [
     rating: 4.9,
     numReviews: 40,
   },
-  {
-    name: "Sample Product",
-    image: "/images/sample.jpg",
-    description:
-      "This is a sample product for demonstration purposes. Replace with real product details.",
-    brand: "SampleBrand",
-    category: "SampleCategory",
-    price: 0.99,
-    countInStock: 0,
-    rating: 3.0,
-    numReviews: 1,
-  },
-  {
-    name: "Samsung 27-inch 4K Monitor",
-    image: "/images/screens.png",
-    description:
-      "Ultra HD 4K monitor with vibrant colors and fast refresh rate. Ideal for work and entertainment.",
-    brand: "Samsung",
-    category: "Electronics",
-    price: 329.99,
-    countInStock: 12,
-    rating: 4.6,
-    numReviews: 18,
-  },
 ];
 
 export default products;
