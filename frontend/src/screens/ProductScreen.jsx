@@ -1,6 +1,15 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
+import {
+  Form,
+  Row,
+  Col,
+  ListGroup,
+  Image,
+  Card,
+  Button,
+} from "react-bootstrap";
 import Rating from "../components/Rating";
 import { useGetProductDetailsQuery } from "../slices/productApiSlice";
 import Loader from "../components/Loader";
@@ -9,11 +18,15 @@ import Message from "../components/Message";
 const ProductScreen = () => {
   const { id: productId } = useParams();
 
+  const [qty, setQty] = useState(1);
+
   const {
     data: product,
     isLoading,
     error,
   } = useGetProductDetailsQuery(productId);
+  console.log([...Array(product.countInStock).keys()]);
+
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
@@ -66,6 +79,23 @@ const ProductScreen = () => {
                     </Col>
                   </Row>
                 </ListGroup.Item>
+
+                {product.countInStock > 0 && (
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Qty</Col>
+                      <Col>
+                        <Form.Control
+                          as="select"
+                          value={qty}
+                          oncChange={(e) => setQty(Number(e.target.value))}
+                        >
+                          {[...Array(product.countInStock).keys]}
+                        </Form.Control>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                )}
 
                 <ListGroup.Item>
                   <Button
